@@ -3,21 +3,22 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
+import "./main.scss";
 
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new Calendar(calendarEl, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
-    header: {
+    headerToolbar: {
       left: 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
-    defaultDate: '2018-01-12',
     navLinks: true, // can click day/week names to navigate views
     editable: true,
-    eventLimit: true, // allow "more" link when too many events
+    dayMaxEvents: true, // allow "more" link when too many events
+    initialDate: "2018-01-01",
     events: [
       {
         title: 'All Day Event',
@@ -29,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
         end: '2018-01-10'
       },
       {
-        id: 999,
+        groupId: 999,
         title: 'Repeating Event',
         start: '2018-01-09T16:00:00'
       },
       {
-        id: 999,
+        groupId: 999,
         title: 'Repeating Event',
         start: '2018-01-16T16:00:00'
       },
