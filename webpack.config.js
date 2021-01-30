@@ -27,7 +27,7 @@ module.exports = {
     target: "web",
     mode: 'development',
     cache: true,
-    entry: './src/index.js',
+    entry: './client/index.js',
     resolve: {
         extensions: ['.js']
     },
@@ -82,7 +82,7 @@ module.exports = {
             options: {}
         }),
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
+            template: "./client/index.html",
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({
