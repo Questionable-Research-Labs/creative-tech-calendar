@@ -2,28 +2,25 @@ const path = require('path')
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CompressionPlugin = require("compression-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 
 process.traceDeprecation = true;
 
 const statSettings = {
-    colors: true,
-    hash: false,
-    version: false,
-    timings: true,
-    assets: false,
-    chunks: false,
-    modules: false,
-    reasons: false,
-    children: false,
-    source: false,
-    errors: true,
-    errorDetails: true,
-    warnings: true,
-    publicPath: false
+    // colors: true,
+    // hash: false,
+    // version: false,
+    // timings: true,
+    // assets: false,
+    // chunks: false,
+    // modules: false,
+    // reasons: false,
+    // children: false,
+    // source: false,
+    // errors: true,
+    // errorDetails: true,
+    // warnings: true,
+    // publicPath: false
 }
 
 module.exports = {
@@ -33,23 +30,6 @@ module.exports = {
     entry: './src/index.js',
     resolve: {
         extensions: ['.js']
-    },
-    optimization: {
-        runtimeChunk: 'single',
-        minimize: false,
-        minimizer: [
-            // new TerserPlugin(),
-            // new CssMinimizerPlugin({
-            //     minimizerOptions: {
-            //         preset: [
-            //             'default',
-            //             {
-            //                 discardComments: { removeAll: true },
-            //             },
-            //         ],
-            //     },
-            // })
-        ]
     },
     module: {
         rules: [
@@ -109,10 +89,6 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new CompressionPlugin({
-            test: /\.(js|css)/
-        }),
-        new TerserPlugin(),
     ],
     stats: statSettings
 }

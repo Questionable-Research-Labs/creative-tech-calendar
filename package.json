@@ -39,7 +39,8 @@
     "postcss-focus-within": "^4.0.0"
   },
   "scripts": {
-    "build": "rm -rf dist && webpack",
+    "build": "rm -rf ~dist && webpack",
+    "build:prod": "rm -rf ~dist && webpack -c ~webpack.prod.js",
     "watch": "webpack --watch",
     "serve": "webpack serve --content-base ./ --hot",
     "clean": "rm -rf dist"
