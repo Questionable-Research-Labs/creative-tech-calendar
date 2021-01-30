@@ -6,9 +6,6 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-
-process.traceDeprecation = true;
-
 const statSettings = {
     colors: true,
     hash: false,
@@ -36,19 +33,21 @@ module.exports = {
     },
     optimization: {
         runtimeChunk: 'single',
-        minimize: false,
+        minimize: true,
         minimizer: [
-            // new TerserPlugin(),
-            // new CssMinimizerPlugin({
-            //     minimizerOptions: {
-            //         preset: [
-            //             'default',
-            //             {
-            //                 discardComments: { removeAll: true },
-            //             },
-            //         ],
-            //     },
-            // })
+            new TerserPlugin({
+                extractComments: true,
+            }),
+            new CssMinimizerPlugin({
+                minimizerOptions: {
+                    preset: [
+                        'default',
+                        {
+                            discardComments: { removeAll: true },
+                        },
+                    ],
+                },
+            })
         ]
     },
     module: {

@@ -4,7 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import "./main.scss";
+import "tailwindcss/tailwind.css"
+import "./main.css";
 
 document.addEventListener('DOMContentLoaded', function () {
 	var calendarEl = document.getElementById('calendar');
