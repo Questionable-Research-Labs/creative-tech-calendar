@@ -6,5 +6,5 @@ yarn install
 echo "Building"
 yarn build:prod
 echo "Starting"
-pm2 start index.js --name webHookManager
+pm2 start index.js --name geekonical
 sudo /home/server/scripts/reloadNGINX.sh
