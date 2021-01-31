@@ -27,7 +27,11 @@ module.exports = {
     target: "web",
     mode: 'development',
     cache: true,
-    entry: './client/index.js',
+    entry: {
+        index: './client/index.js',
+        calender: './client/calender.js',
+        embed: './client/embed.js'
+    },
     resolve: {
         extensions: ['.js']
     },
@@ -91,9 +95,15 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             options: {}
         }),
-        new HtmlWebPackPlugin({
+        new HtmlWebpackPlugin({
+            filename: "./index.html",
             template: "./client/index.html",
-            filename: "./index.html"
+            chunks: ["index","calender"]
+        }),
+        new HtmlWebpackPlugin({
+            filename: './embed.html',
+            template: './client/embed.html',
+            chunks: ["embed","calender"]
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
