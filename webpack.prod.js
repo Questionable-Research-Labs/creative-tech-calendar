@@ -87,15 +87,6 @@ module.exports = {
         filename: '[name].js',
         path: path.join(__dirname, 'dist')
     },
-    devtool: 'source-map',
-    devServer: {
-        writeToDisk: true,
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000,
-        stats: statSettings
-
-    },
     plugins: [
         new webpack.LoaderOptionsPlugin({
             options: {}

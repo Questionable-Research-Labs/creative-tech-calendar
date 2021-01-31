@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-let port = process.env.PORT !== undefined ? process.env.PORT : "3000";
+let port = process.env.PORT | "4001";
 
 let app = express();
 
