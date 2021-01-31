@@ -7,27 +7,27 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 process.traceDeprecation = true;
 
 const statSettings = {
-    // colors: true,
-    // hash: false,
-    // version: false,
-    // timings: true,
-    // assets: false,
-    // chunks: false,
-    // modules: false,
-    // reasons: false,
-    // children: false,
-    // source: false,
-    // errors: true,
-    // errorDetails: true,
-    // warnings: true,
-    // publicPath: false
+    colors: true,
+    hash: false,
+    version: false,
+    timings: true,
+    assets: false,
+    chunks: false,
+    modules: false,
+    reasons: false,
+    children: false,
+    source: false,
+    errors: true,
+    errorDetails: true,
+    warnings: true,
+    publicPath: false
 }
 
 module.exports = {
     target: "web",
     mode: 'development',
     cache: true,
-    entry: './src/index.js',
+    entry: './client/index.js',
     resolve: {
         extensions: ['.js']
     },
@@ -69,20 +69,12 @@ module.exports = {
         path: path.join(__dirname, 'dist')
     },
     devtool: 'source-map',
-    devServer: {
-        writeToDisk: true,
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000,
-        stats: statSettings
-
-    },
     plugins: [
         new webpack.LoaderOptionsPlugin({
             options: {}
         }),
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
+            template: "./client/index.html",
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({

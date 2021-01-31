@@ -1,4 +1,6 @@
 dist/
+start.fish
+.idea/
 
 # Logs
 logs

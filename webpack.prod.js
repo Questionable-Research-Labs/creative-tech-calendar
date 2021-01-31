@@ -27,7 +27,7 @@ module.exports = {
     target: "web",
     mode: 'development',
     cache: true,
-    entry: './src/index.js',
+    entry: './client/index.js',
     resolve: {
         extensions: ['.js']
     },
@@ -87,21 +87,12 @@ module.exports = {
         filename: '[name].js',
         path: path.join(__dirname, 'dist')
     },
-    devtool: 'source-map',
-    devServer: {
-        writeToDisk: true,
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000,
-        stats: statSettings
-
-    },
     plugins: [
         new webpack.LoaderOptionsPlugin({
             options: {}
         }),
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
+            template: "./client/index.html",
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({
