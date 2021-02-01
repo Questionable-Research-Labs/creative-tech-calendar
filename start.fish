@@ -1,6 +1,8 @@
 #!/usr/bin/fish
+cd (dirname (status -f))
+nvm install
 nvm use
-set NODE_ENV=production
+set NODE_ENV production
 echo "Installing dependices"
 yarn install
 echo "Building"
