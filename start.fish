@@ -1,4 +1,8 @@
 #!/usr/bin/fish
+
+set HOME /home/server/
+source ~/.config/fish/config.fish
+
 cd (dirname (status -f))
 nvm install
 nvm use
