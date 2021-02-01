@@ -1,12 +1,12 @@
 #!/usr/bin/fish
 
-set HOME /home/server/
-source ~/.config/fish/config.fish
-
 cd (dirname (status -f))
+
+echo "Installing required Node version"
 nvm install
-nvm use
+npm install --global yarn
 set NODE_ENV production
+
 echo "Installing dependices"
 yarn install
 echo "Building"
