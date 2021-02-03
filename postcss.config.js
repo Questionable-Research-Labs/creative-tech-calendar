@@ -5,6 +5,7 @@ module.exports = {
         tailwindcss('./tailwind.config.js'),
         require('postcss-import'),
         require('precss'),
-        require('autoprefixer')
+        require('autoprefixer'),
+        
     ]
 }
