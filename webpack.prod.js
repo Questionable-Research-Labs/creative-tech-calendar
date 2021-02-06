@@ -29,7 +29,6 @@ module.exports = {
     cache: true,
     entry: {
         index: './client/index.js',
-        calender: './client/calender.js',
         embed: './client/embed.js'
     },
     resolve: {
@@ -58,7 +57,6 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                include: path.resolve(__dirname, "src"),
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -68,23 +66,49 @@ module.exports = {
                     },
                     "css-loader",
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader', // Run post css actions
+                        options: {
+                            postcssOptions: { // post css plugins, can be exported to postcss.config.js
+                                plugins: [
+                                    require('precss'),
+                                    require('autoprefixer')
+                                ]
+                            }
+                        }
                     }
                 ],
             },
             {
-                test: /\.css$/i,
-                exclude: path.resolve(__dirname, "src"),
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            esModule: false
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'static/fonts/',
+                    }
+                }]
+
+            },
+            {
+                test: /\.(scss)$/,
+                use: [{
+                    loader: 'style-loader', // inject CSS to page
+                }, {
+                    loader: 'css-loader', // translates CSS into CommonJS modules
+                }, {
+                    loader: 'postcss-loader', // Run post css actions
+                    options: {
+                        postcssOptions: { // post css plugins, can be exported to postcss.config.js
+                            plugins: [
+                                require('precss'),
+                                require('autoprefixer')
+                            ]
                         }
-                    },
-                    "css-loader",
-                ],
-            }
+                    }
+                }, {
+                    loader: 'sass-loader' // compiles Sass to CSS
+                }]
+            },
         ],
     },
     output: {
