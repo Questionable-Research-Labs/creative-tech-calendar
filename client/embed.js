@@ -13,7 +13,6 @@ for (let p of urlParams) {
     console.log(p);
   }
 if (urlParams.get("theme") === "dark") {
-    console.log("Test")
     addStyle(`
     body {
         background-color: #272727;

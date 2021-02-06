@@ -3,15 +3,16 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
+import bootstrapPlugin from '@fullcalendar/bootstrap';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import "tailwindcss/tailwind.css"
-import "./main.css";
+import "./main.scss";
 
 export function loadCalendar() {
 	var calendarEl = document.getElementById('calendar');
 
 	var calendar = new Calendar(calendarEl, {
-		plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, googleCalendarPlugin],
+		plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin, googleCalendarPlugin, bootstrapPlugin],
+		themeSystem: 'bootstrap',
 		googleCalendarApiKey: "AIzaSyDk2J-pFA7BUbDdD2Hm3nCnLFvaGl_UIvA",
 		headerToolbar: {
 			left: 'prev,next today',

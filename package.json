@@ -5,19 +5,23 @@
   "author": "jasper@qrl.nz",
   "license": "UNLICENSED",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fullcalendar/bootstrap": "^5.5.0",
     "@fullcalendar/core": "^5.5.1",
     "@fullcalendar/daygrid": "^5.5.0",
     "@fullcalendar/google-calendar": "^5.5.0",
     "@fullcalendar/interaction": "^5.5.0",
     "@fullcalendar/list": "^5.5.0",
     "@fullcalendar/timegrid": "^5.5.1",
+    "@popperjs/core": "^2.6.0",
     "autoprefixer": "^10.2.4",
+    "bootstrap": "^5.0.0-beta1",
+    "bootswatch": "^4.6.0",
     "express": "^4.17.1",
+    "file-loader": "^6.2.0",
     "postcss": "^8.2.4",
     "postcss-import": "^14.0.0",
-    "postcss-loader": "^4.2.0",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^2.0.2"
+    "postcss-loader": "^4.2.0"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^7.1.2",
@@ -46,6 +50,8 @@
     "start": "node src/index.js",
     "watch:express": "nodemon src/index.js",
     "watch:webpack": "webpack --watch",
-    "watch": "(webpack --watch) & (nodemon src/index.js)"
+    "watch": "(webpack --watch) & (nodemon src/index.js)",
+    "serve": "yarn start",
+    "dev": "yarn watch"
   }
 }
