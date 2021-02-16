@@ -1,0 +1,19 @@
+@import "./main.scss";
+
+.calender-container {
+    display: flex;
+    justify-content: center;
+    
+    #calendar {
+        width: 70%;
+        margin: 0 auto;
+        .fc-view-harness {
+            border: 2px solid grey;
+            .fc-daygrid-day.fc-day {
+                border: 2px solid grey;
+            }
+        }
+        
+        
+    }
+}

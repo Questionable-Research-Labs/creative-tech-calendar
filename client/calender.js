@@ -5,7 +5,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import bootstrapPlugin from '@fullcalendar/bootstrap';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import "./main.scss";
 
 export function loadCalendar() {
 	var calendarEl = document.getElementById('calendar');
