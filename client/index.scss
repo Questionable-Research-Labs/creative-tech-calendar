@@ -1,19 +1,40 @@
 @import "./main.scss";
 
+html {
+    height: 100%;
+}
+
+.h1 {
+    
+}
+
 .calender-container {
     display: flex;
     justify-content: center;
     
-    #calendar {
+    .calender-wrapper {
+        border: 4px solid rgb(0, 0, 0);
+        border-radius: 1rem;
+        padding: 1em;
         width: 70%;
-        margin: 0 auto;
-        .fc-view-harness {
-            border: 2px solid grey;
-            .fc-daygrid-day.fc-day {
-                border: 2px solid grey;
-            }
+        #calendar {
+            width: 100%;
+            margin: 0 auto;
+            
+            
+            // .fc-view-harness {
+            //     border: 2px solid grey;
+            //     .fc-daygrid-day.fc-day {
+            //         border: 2px solid grey;
+            //     }
+            // }
+            // td {
+            //     border: 2px solid grey;
+            // }
+            
+            
+            
         }
-        
-        
     }
+    
 }
