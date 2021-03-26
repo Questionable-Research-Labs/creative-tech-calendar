@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 
-let port = process.env.PORT | "4001";
+let port = process.env.PORT | "8080";
 
 let app = express();
 
