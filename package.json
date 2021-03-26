@@ -47,11 +47,12 @@
     "build": "rm -rf ~dist && webpack",
     "build:prod": "rm -rf ~dist && webpack -c ./webpack.prod.js",
     "clean": "rm -rf dist",
-    "start": "node src/index.js",
+    "start": "webpack && node src/index.js",
     "watch:express": "nodemon src/index.js",
     "watch:webpack": "webpack --watch",
     "watch": "(webpack --watch) & (nodemon src/index.js)",
     "serve": "yarn start",
-    "dev": "yarn watch"
+    "dev": "yarn watch",
+    "run": "webpack && node src/index.js"
   }
 }
