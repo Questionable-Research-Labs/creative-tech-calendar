@@ -1,0 +1,9 @@
+FROM node:15.7.0
+ENV NODE_ENV=production
+ENV PORT=80
+WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install --production
+COPY . .
+RUN  "webpack -c ./webpack.prod.js"
+CMD [ "node", "./src/index.js" ]
