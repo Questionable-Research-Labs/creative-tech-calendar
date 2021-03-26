@@ -38,7 +38,7 @@
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^5.1.1",
+    "terser-webpack-plugin": "^5.1.1"
   },
   "resolutions": {
     "postcss-focus-within": "^4.0.0"
